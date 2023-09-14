@@ -1,4 +1,4 @@
-export type DataCompanies = {
+export type CompanyType = {
   id: number
   company: string
   logo: string
@@ -14,7 +14,7 @@ export type DataCompanies = {
   tools: Array<string>
 }
 
-export const dataCompany: Array<DataCompanies> = [
+export const companies: Array<CompanyType> = [
   {
     id: 1,
     company: 'Photosnap',

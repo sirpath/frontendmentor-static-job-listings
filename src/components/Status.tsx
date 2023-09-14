@@ -1,25 +1,24 @@
-import { DataCompanies } from '@/data/companies'
+import { CompanyType } from '@/data/companies'
 
-const Status: React.FC<Pick<DataCompanies, 'statusNew' | 'featured'>> = ({
-  statusNew,
-  featured,
+const Status: React.FC<Pick<CompanyType, 'statusNew' | 'featured'>> = ({
+  statusNew: isNew,
+  featured: isFeatured,
 }) => {
   return (
-    <>
-      {statusNew ? (
-        <>
-          <span className="rounded-2xl bg-primary p-2 text-white"> NEW! </span>
-          <span>&emsp;</span>
-        </>
-      ) : (
-        ''
+    <span className="space-x-3">
+      {isNew && (
+        <span className="rounded-2xl bg-primary p-2 text-secondary-light">
+          {' '}
+          NEW!{' '}
+        </span>
       )}
-      {featured ? (
-        <span className="rounded-2xl bg-black p-2 text-white"> FEATURED </span>
-      ) : (
-        ''
+      {isFeatured && (
+        <span className="rounded-2xl bg-secondary-dark p-2 text-secondary-light">
+          {' '}
+          FEATURED{' '}
+        </span>
       )}
-    </>
+    </span>
   )
 }
 
